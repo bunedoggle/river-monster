@@ -14,3 +14,6 @@ Resources:
  - http://www.seeedstudio.com/depot/GPRS-Shield-V20-p-1379.html?cPath=132_134
  - http://publiclab.org/wiki/water-quality-sensor
  - https://www.enocean.com/en/enocean-pi/
+Low Power Arduino lib:
+ - http://www.rocketscream.com/blog/2011/07/04/lightweight-low-power-arduino-library/
+ - https://github.com/rocketscream/Low-Power
