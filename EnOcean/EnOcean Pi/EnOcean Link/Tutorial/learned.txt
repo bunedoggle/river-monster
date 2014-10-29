@@ -1,0 +1,26 @@
+_EOLINK_SAVE
+HEADER
+{
+ name:_HUMAN_ARCHIVE
+ major:0x0
+ minor:0x4
+}
+Gateway
+{
+ myDeviceManager
+ {
+  Counter:0x0
+ }
+ myFilter
+ {
+  type:0x1
+  Counter:0x0
+ }
+ myLearnFilter
+ {
+  type:0x2
+  maxdBm:0x0
+  mindBm:0xffffffc4
+ }
+ LearnMode:FALSE
+}

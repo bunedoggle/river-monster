@@ -1,0 +1,122 @@
+License Terms EnOcean Link Trial Version
+
+THIS SOFTWARE PRODUCT OFFERED FOR DOWNLOAD INCLUDING SOURCE CODE AND PERTAINING 
+DOCUMENTATION EMBODIED THEREIN ("LICENSED SOFTWARE") IS PROPRIETARY TO 
+ENOCEAN GMBH, OBERHACHING, GERMANY ("ENOCEAN") AND IS PROTECTED BY COPYRIGHT 
+AND INTERNATIONAL TREATIES OR PROTECTED AS TRADE SECRET OR AS OTHER INTELLECTUAL
+PROPERTY RIGHT. ALL RIGHTS, TITLE AND INTEREST IN AND TO THE SOFTWARE, 
+INCLUDING ANY COPYRIGHT, TRADE SECRET OR ANY OTHER INTELLECTUAL PROPERTY 
+EMBODIED IN THE SOFTWARE, AND ANY RIGHTS TO REPRODUCE, DISTRIBUTE, MODIFY, 
+DISPLAY OR OTHERWISE USE THE SOFTWARE SHALL EXCLUSIVELY VEST IN ENOCEAN. 
+ANY USE OF THE LICENSED SOFTWARE BY THE PERSON OR ORGANIZATION WHICH DOWNLOADED
+THE LICENSED SOFTWARE ("YOU" OR "USER" OR LICENSEE" AS THE CASE MAY BE) SHALL 
+BE SUBJECT TO THE FOLLOWING LICENSE TERMS AND BY DOWNLOADING AND/OR USING THE 
+LICENSED SOFTWARE YOU ACKNOWLEDGE TO BE BOUND BY THESE TERMS: 
+
+1.	License Grant
+1.1	EnOcean hereby grants to Licensee a non-exclusive, non-transferable license 
+to use the Licensed Software for Licensee’s internal demonstration, testing and 
+evaluation purposes in connection with Licensee's system which shall be used 
+for testing and evaluating the Licensed Software ("Reference Environment"). 
+1.2	The use of the Licensed Software shall be exclusively limited for 
+demonstrating, testing and evaluating the Licensed Software and shall within 
+such scope include the right to modify the Licensed Software and/or the source 
+code, provided, however, that Licensee shall not be entitled (i) to use or 
+integrate the Licensed Software and/or resulting modifications in its products 
+or (ii) to sub-license, reproduce or distribute the Licensed Software. Licensee 
+shall not decompile or reverse-engineer the Licensed Software or any parts 
+thereof. 
+1.3	The Licensed Software may contain freeware, shareware or open source 
+software. No license fee is charged to Licensee for the use of such freeware, 
+shareware or open source software. Regarding such portions of Licensed Software, 
+the Licensee hereby accepts the specific license conditions 
+("Open Source Conditions"). To the extent there is a conflict between these 
+Terms and the Open Source Conditions, the terms of the Open Source Conditions 
+shall prevail over the terms and conditions of these Terms with regard to the 
+open source software. 
+
+2.	Copyright, Trademarks, Title
+2.1	All rights, title and interest in and to the Licensed Software 
+(and any part thereof) other than the rights to use expressly granted 
+in Clause 2, shall remain wholly vested in EnOcean or its third party licensors.
+ Licensee acknowledges that it has no rights whatsoever in respect of the 
+ Licensed Software save for the rights to use expressly granted in Clause 1.
+2.2	Any and all rights, title and interest in any derivative works created by or
+ any other intellectual property right arising in connection with Licensee 
+ modifying the Licensed Software, including trade secrets and know-how shall be 
+ exclusively owned by EnOcean and EnOcean shall be entitled to seek or apply for
+  statutory protection in its sole discretion. 
+
+3.	Exclusion of Warranty
+Licensee acknowledges and agrees that EnOcean provides no warranties and shall 
+have no liability towards Licensee whatsoever in respect of Licensee's 
+possession and/or use of the Licensed Software, including freeware, shareware 
+or open source software. In particular, Licensee acknowledges and accepts that 
+the Licensed Software, including source code and documentation may not be error 
+free.  
+
+4.	Limitation of Liability
+4.1	EnOcean shall be liable for damages only to the extent proximately caused 
+by EnOcean's negligence or willful acts or omissions, except where such 
+liability is mandatory under applicable law. 
+4.2	EnOcean shall in no event be liable to nor indemnify Licensee for loss of 
+contracts, loss of business, loss of data (including but not limited to any 
+and all costs for retrieving and restoring lost data), loss of interest, for 
+lost profits or business interruption or any indirect or consequential damages, 
+irrespective of the cause of action or the legal theory upon which such claim is
+ based.
+4.3	The limitation of liability set forth in this Clause 4 shall not apply in 
+case of personal injury and death, fraud and intentional acts or omissions. 
+
+5.	Intellectual Property Infringement
+If any claim, suit, action or proceeding is brought against Licensee by a third 
+party to the extent it is based on any infringement of intellectual property 
+rights, such as but not limited to patents utility models, design patents, 
+copyrights or mask work rights owned by third parties, by the use of the 
+Licensed Software explicitly authorized under these Terms ("Claims"), and if,
+ as a result of such a Claim, Licensee becomes enjoined or it is likely, in 
+ EnOcean' opinion, that Licensee will become enjoined from using the Licensed 
+ Software, Licensee shall immediately stop using the Licensed Software. 
+
+6.	Term and Termination
+6.1	These Terms and the license granted in Clause 1 shall take effect upon the 
+first download and shall terminate 24 months thereafter. 
+6.2	The license granted in Clause 1 may be terminated by EnOcean at any time 
+upon written notice with a notice period of two weeks. 
+
+7.	Export Regulations
+7.1	Licensee shall comply with all export laws applicable to the Licensed 
+Software and/or the Software Documentation in effect from time to time. 
+Without limiting the generality of the foregoing, Licensee expressly warrants 
+that it will not directly or indirectly export, re-export, or transship the 
+Licensed Software in violation of any applicable export laws, rules or 
+regulations.
+
+8.	Miscellaneous
+8.1	Venue (Gerichtsstand) for any and all disputes arising out of or in 
+connection with these Terms and its consummation shall be the high court 
+Munich I (Landgericht München I) and each Party submits to the exclusive 
+jurisdiction of said court and agrees that venue shall lie exclusively with such
+ court to the extent legally permissible.
+8.2	These Terms shall be construed in accordance with and governed by the laws 
+of the Federal Republic of Germany without regard to its conflict of laws 
+principles. 
+8.3	Unless otherwise explicitly set forth in these Terms, no delay or omission 
+of the Parties in exercising any right, power, or privilege under these Terms 
+shall impair or shall be construed as a waiver of any such right, power or 
+privilege, nor shall any partial exercise of such right, power or privilege 
+preclude any further exercise of such right, power or privilege or the exercise 
+of any other right, power or privilege.
+8.4	The partial or entire invalidity, illegality or unenforceability of any 
+provision of these Terms shall not affect the validity, legality or 
+enforceability of the remaining part or any other provision. The invalid or 
+unenforceable provision shall be replaced by a provision which, in so far as it 
+is legally permissible, reflects the actual intentions of the Parties as closely 
+as possible or, considering the meaning and purpose of the Agreement or of the 
+invalid or unenforceable provision, the presumptive intentions of the Parties 
+had they considered the point at the time of concluding these Terms. The 
+foregoing shall also apply to the extent that these Terms do not completely 
+regulate any question that may arise with respect to its subject matter or 
+otherwise contains any gap (Regelungslücke).
+
+ 
