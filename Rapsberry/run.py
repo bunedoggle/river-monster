@@ -7,6 +7,7 @@ import sys
 import popen2
 import serial 
 import time
+import random
 
 input_fd_stdin = 0
 input_fd_stdout = 0
@@ -52,7 +53,11 @@ def check_line(line):
     lineMatch = re.search("^(.+)\sEnO_sensor_([^\s]+)\s+(.+)$", line)
     if lineMatch:
         ts = lineMatch.group(1)
+
+        ## convert sensor id (hex) to decimal
+        ##sensorId = int( "0x" + lineMatch.group(2), 16 )
         sensorId = lineMatch.group(2)
+
         sensorData = lineMatch.group(3)
         # print ts, "matched sensor", sensorId, "data", sensorData
         check_sensor(ts, sensorId, sensorData)
@@ -91,28 +96,45 @@ def do_send_data(ts, sensor_id, sensor1_value, sensor2_value, sensor3_value):
     # cmdStr = "@STid:%s,sensor1:%s,sensor2:%s,sensor3:%s#" % (
     #    sensor_id, sensor1_value, sensor2_value, sensor3_value)
 
-    locations = [ [42.65028, -71.30939], [42.65136,-71.31128] ]
-    locationOffset = 1
+    locations = [ [42.65028, -71.30939],
+                  [42.65136, -71.31128],
+                  [42.65319, -71.31385],
+                  [42.65533, -71.31694],
+                  [42.65622, -71.32055],
+                  [42.65388, -71.32227] ]
+
+    locationOffset = random.randint(0, len(locations) - 1)
 
     rawTemp = int(sensor3_value)
     convertedTemp = ((255 - rawTemp) * 40) / 255
     # print "rawTemp", rawTemp, "convertedTemp", convertedTemp
 
-    ts2 = 123456
-
-    cmdStr = "@SD%s,%s,%s,%s,%s,%s#\r\n" % (
-        sensor_id, ts2, locations[locationOffset][0], locations[locationOffset][1], 
+    ## ts2 = int(time.time())
+    cmdStr = "@SD%s,%s,%s,%s,%s,%s#" % (
+        "%s.%s" % (sensor_id, locationOffset),
+        ts, locations[locationOffset][0], locations[locationOffset][1], 
         convertedTemp, sensor1_value)
-
     print "sending %s" % cmdStr
+    raw_serial.write(cmdStr + "\r\n")
+
     # raw_serial.write("@STthis is a test#")
     ## raw_serial.write(cmdStr)
 
-    # cmdStr2 = "@SD1003,1234568,42.65028,-71.30939,15,1000\n\r"
-    # raw_serial.write(cmdStr2)
+    # raw_serial.write("@GV#\r\n")
+    # print raw_serial.readline()
 
-    raw_serial.write("@GV#\r\n")
-    print raw_serial.readlines()
+    # cmdStr2 = "@SD1001,1234533,42.65028,-71.30939,43,1001#\r\n"
+    # raw_serial.write("@SDtest#\r\n")
+
+    print raw_serial.readline()
+    print raw_serial.readline()
+    print raw_serial.readline()
+    print raw_serial.readline()
+    print raw_serial.readline()
+    print raw_serial.readline()
+    print raw_serial.readline()
+    print raw_serial.readline()
+    print raw_serial.readline()
 
     print "done sending"
 
@@ -141,6 +163,7 @@ def do_read_logs():
 # ======================================================================
 
 if __name__ == "__main__":
+    random.seed()
     do_open_serial()
     do_read_logs()
     do_close_serial()
