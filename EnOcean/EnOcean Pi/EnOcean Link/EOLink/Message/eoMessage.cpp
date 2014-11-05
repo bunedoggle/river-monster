@@ -1,0 +1,79 @@
+/******************************************************************************
+ DISCLAIMER
+
+ THIS SOFTWARE PRODUCT ("SOFTWARE") IS PROPRIETARY TO ENOCEAN GMBH, OBERHACHING,
+ GERMANY (THE "OWNER") AND IS PROTECTED BY COPYRIGHT AND INTERNATIONAL TREATIES OR
+ PROTECTED AS TRADE SECRET OR AS OTHER INTELLECTUAL PROPERTY RIGHT. ALL RIGHTS, TITLE AND
+ INTEREST IN AND TO THE SOFTWARE, INCLUDING ANY COPYRIGHT, TRADE SECRET OR ANY OTHER 
+ INTELLECTUAL PROPERTY EMBODIED IN THE SOFTWARE, AND ANY RIGHTS TO REPRODUCE,
+ DISTRIBUTE, MODIFY, DISPLAY OR OTHERWISE USE THE SOFTWARE SHALL EXCLUSIVELY VEST IN THE
+ OWNER. ANY UNAUTHORIZED REPRODUCTION, DISTRIBUTION, MODIFICATION, DISPLAY OR OTHER
+ USE OF THE SOFTWARE WITHOUT THE EXPLICIT PERMISSION OF OWNER IS PROHIBITED AND WILL 
+ CONSTITUTE AN INFRINGEMENT OF THE OWNER'S RIGHT AND MAY BE SUBJECT TO CIVIL OR
+ CRIMINAL SANCTION.
+
+ THIS SOFTWARE IS PROVIDED BY THE OWNER "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS 
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN PARTICULAR, THE OWNER DOES NOT WARRANT
+ THAT THE SOFTWARE SHALL BE ERROR FREE AND WORKS WITHOUT INTERRUPTION.
+
+ IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ ******************************************************************************/
+#include "eoMessage.h"
+#include "eoTelegram.h"
+#include "eoApiDef.h"
+#include <string.h>
+
+eoMessage::eoMessage(uint16_t size) : eoAbstractMessage(size)
+{
+	status = 0;
+	RORG = 0;
+	sourceID = 0;
+	destinationID = BROADCAST_ID;
+	securityLevel = 0;
+}
+
+eoReturn eoMessage::copyTo(eoMessage &msg) const
+{
+	if (msg.maxLength < (dataLength))
+		return OUT_OF_RANGE;
+	msg.dataLength = dataLength;
+	msg.status = status;
+	msg.RORG = RORG;
+	msg.sourceID = sourceID;
+	msg.destinationID = destinationID;
+	msg.securityLevel = securityLevel;
+
+	memcpy(msg.data, data, msg.dataLength);
+	return EO_OK;
+}
+
+eoMessage::eoMessage(const eoTelegram &tel)
+{
+	data = new uint8_t[tel.maxLength];
+	maxLength = tel.maxLength;
+	RORG = tel.RORG;
+	dataLength = tel.dataLength;
+	memcpy(data, tel.data, tel.dataLength);
+	status = tel.status;
+	sourceID = tel.sourceID;
+	destinationID = tel.destinationID;
+	securityLevel = tel.securityLevel;
+}
+
+void eoMessage::Clear()
+{
+	memset(data, 0, maxLength);
+}
+
+eoMessage::~eoMessage()
+{
+	if(data!=NULL)
+		delete[] data;
+	data = NULL;
+}
