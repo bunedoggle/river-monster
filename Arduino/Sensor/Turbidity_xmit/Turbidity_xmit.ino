@@ -1,4 +1,4 @@
-
+#include <LowPower.h>
 #include <RH_ASK.h>
 #include <SPI.h> // Not actually used but needed to compile
 
@@ -22,16 +22,34 @@ void setup()
 	if (!driver.init() )
 	Serial.println("init failed");
 	data.time = 0;
+	
+	// Using this pin to power the turbidity sensor
+	pinMode(A2,OUTPUT);
+	digitalWrite(A2,HIGH);
+	
+	//analogReference(INTERNAL);
 }
 
 void loop()
 {	
+	// Turn on sensor
+	digitalWrite(A2,HIGH);
+	
 	data.id = UID;
 	data.time += 1;
-	data.temperature = analogRead(A0);   
-	data.turbidity = analogRead(A1);     
-	
+	data.temperature = analogRead(A1);   
+	data.turbidity = analogRead(A0);     
+
+	// Send data
 	driver.send((uint8_t*)&data,sizeof(data));
 	driver.waitPacketSent();
-	delay(1000);
+	
+	// Sleep
+	//delay(1000);
+	
+	// Deep powerdown
+	LowPower.powerDown(SLEEP_1S, ADC_OFF, BOD_OFF);
+	
+	// Low power sleep
+	//LowPower.idle(SLEEP_1S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, SPI_OFF, USART0_OFF, TWI_OFF);
 }
