@@ -7,11 +7,11 @@
 //RH_ASK::RH_ASK(uint16_t speed, uint8_t rxPin, uint8_t txPin, uint8_t pttPin, bool pttInverted)
 RH_ASK driver( 1200, 2, 3, 4, 5 );
 
-typedef struct {
+typedef struct __attribute__((packed)){
 	uint8_t id;
 	uint32_t time;
-	uint8_t temperature;
-	uint8_t turbidity;	
+	uint16_t temperature;
+	uint16_t turbidity;	
 	} PACKET_T;
 
 PACKET_T data;
@@ -39,6 +39,13 @@ void loop()
 	data.time += 1;
 	data.temperature = analogRead(A1);   
 	data.turbidity = analogRead(A0);     
+
+	//Serial.print("Temp:");
+	//Serial.println(analogRead(A1));
+
+	//Serial.print("Turb:");
+	//Serial.print(analogRead(A0));
+	driver.printBuffer()
 
 	// Send data
 	driver.send((uint8_t*)&data,sizeof(data));
