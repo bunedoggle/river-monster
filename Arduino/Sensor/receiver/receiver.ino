@@ -1,7 +1,7 @@
 // Turbidity chart
 // fluid              reading   voltage
 //------------------------------------------
-// water	        915	2.95
+// water	        924	2.95
 // milk	                19	0.065
 
 // Temperature Chart
@@ -41,13 +41,15 @@ float tempPoints[5][2]= {
     800,145  }
 };
 
-float turbPoints[5][2]= {
+float turbPoints[4][2]= {
   {
     18,4000  }
   , {
     155,1500  }
   , {
     915,10  }
+  , {
+    1023, 0 }
 };
 
 
